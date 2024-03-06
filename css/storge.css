@@ -1,0 +1,625 @@
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+    color: #333;
+    background-image: linear-gradient(to top left, #753682 0%,  #bf2e34 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    position: relative;
+    width: 70%;
+    height: 80%;
+    display: flex;
+
+    background-color: rgb(225, 225, 225, 0.35); 
+    box-shadow: 0 3rem 5rem rgb(0, 0, 0, 0.25);
+    overflow: hidden;
+    backdrop-filter: blur(200px);
+    border-radius: 10px;
+}
+
+.player{
+    flex: 50%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.75s;
+}
+
+/* ELEMENTS */
+.name{
+    position: relative;
+    font-size: 38px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+.score{
+    font-size: 70px;
+    font-weight: 300;
+    color: #c3365f;
+    margin-bottom: auto;
+}
+.player-active{
+    background-color: rgb(225, 225, 225, 0.4);
+}
+.player-active .name{
+    font-weight: 700;
+}
+.player-active .score{
+    font-weight: 400;
+}
+.player-active .current{
+    opacity: 1;
+}
+.current{
+    background-color: #c7365f;
+    opacity: 0.8;
+    color: #fff;
+    border-radius: 9px;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    transition: all .075s;
+}
+.current-label{
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ddd;
+}
+
+.current-score{
+    font-size: 40px;
+}
+
+.btn{
+    position: absolute; 
+    left: 50%;
+    transform: translate(-50%);
+    color: #444;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.2S;
+
+    background-color: white;
+    background-color: rgb(225, 225, 225, 0.6);
+    background-color: blur(10px);
+
+    padding: 0.35rem 1.5rem;
+    border-radius: 50rem;
+    box-shadow: 0 1.75rem 3rem rgb(0, 0, 0, 0.1);
+}
+
+.btn--new{
+    top: 4rem;
+}
+.btn--roll{
+    top: 20rem;
+}
+.btn--hold{
+    top: 25rem;
+}
+.btn:active{
+    transform: translate(-50%, 3px);
+    box-shadow: 0 1rem 2rem rgb(0, 0, 0, 0.15);
+}
+.btn:focus{
+    outline: none;
+}
+.dice{
+    position: absolute;
+    left: 50%;
+    top: 130px;
+    transform: translateX(-50%);
+    height: 130px;
+    box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+.player-winner {
+    background-color: #333;
+}
+.player-winner .name{
+    font-weight: 700;
+    color: #c7365f;
+}
+.hidden{
+    display: none;
+}
+
+
+/* .overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background-color: #d6c4c43b;
+} */
+
+
+
+
+
+/* 3 زراير */
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #FFC19233;
+}
+.container{
+    margin: auto;
+    padding: 50px;
+}
+.a{
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    margin: auto;
+}
+
+button{
+    width: 80px;
+    height: 35px;
+    border-radius: 25px;
+    font-weight: bold;
+    color: black;
+    background-color: #FFC107;
+    border: none;
+    justify-content: space-between;
+}
+
+button:hover{
+    background-color: #07be41;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+
+}
+
+.model{
+    position: absolute;
+    top: 50%;    
+    left: 50%;
+    transform: translate(-50%, -50%);   
+    width: 70%;
+    
+    background-color: white;
+    padding: 6rem;
+    border-radius: 5px;
+    box-shadow:  0 3rem 6rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.overlay{
+    position: absolute;
+    left:0 ;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+
+.model .btn-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.hidden {
+    display: none;
+} */
+
+/* 3 زراير */
+
+
+
+
+
+
+
+
+
+
+
+/* لعبت التخمين */
+
+/* *{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62%;
+}
+
+body{
+    font-size: 'press start 2p', sans-serif;
+    color: #eee;
+    background-color: #60b347;
+}
+
+header{
+position: relative;
+height: 35vh;
+border-bottom: 7px solid #eee;
+}
+header .btn{
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    color: #eee;
+    height: 30px;
+    width: 90px;
+    font-size: 20px;
+    border: 1px solid #eee;
+}
+header .number{
+    font-size: 30px;
+}
+header .Between{
+    font-size: 20px;
+}
+header .number{
+    position: absolute;
+    right: 50%;
+    bottom: 0;
+    width: 50px;
+    height:  50px;
+    border: #6034;
+}
+
+
+
+
+
+header h1{
+    margin-top: 40px;
+    margin-left: 35%;
+}
+
+main{
+    height: 65vh;
+    color: #eee;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main .left{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+main .left .Guess{
+    text-align: center;
+    background-color: transparent;
+    width: 150px;
+    height: 70px;
+}
+main .left .Check{  
+    color: #eee;
+    font-size: 20px;
+    background-color: #60b347;
+    border: 1px solid #476db3;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+
+}
+.Check{
+    cursor: pointer;
+}
+
+main .right{
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+}
+main .right p{
+    margin: 15px;
+} */
+
+/* لعبت التخمين */
+
+
+
+
+
+/* لعبو الزيرو */
+
+/* *{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: tahoma, arial;
+}
+hr{
+    border: 1px solid #EEE;
+}
+.container{
+    margin: 20px auto;
+    width: 1000px;
+}
+.game-info{
+    display: flex;
+}
+.game-info .game-name{
+    flex: 1;
+}
+.game-info .category{
+    flex: 1;
+    text-align: right;
+}
+.game-info .category span{
+    text-transform: capitalize;
+    font-weight: bold;
+    color: tomato;
+}
+
+.row .hangman-draw{
+    flex: 1;
+    background-color: #f8f8f8;
+    height: 324px;
+    padding: 20px;
+}
+.row .the-draw{
+    position: relative;
+    width: 60px;
+    height: 280px;
+    margin: auto;
+    border-bottom: 4px solid #222;
+}
+.row .the-draw .the-stand::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 5px;
+    left: 50%;
+    margin-left: -2px;
+    background-color: #222;
+}
+.row .the-draw .the-hang::before{
+    position: absolute;
+    content: "";
+    background-color: #222;
+    width: 100px;
+    height: 4px;
+    left: 30px;
+    top: 8%;
+}
+.row .the-draw .the-hang::after{
+    position: absolute;
+    content: "";
+    background-color: #222;
+    width: 4px;
+    height: 25px;
+    left: 126px;
+    top: 9%;
+}
+.row .the-draw .the-rope{
+    position: absolute;
+    border: 4px dashed #222;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    left: 154%;
+    top: 17%;
+}
+
+.the-draw .the-man {
+    position: relative;
+}
+.the-draw .the-man .head{
+    position: absolute;
+    border: 4px solid #222;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    top: 56.6px;
+    left: 102.5px;
+}
+.the-draw .the-man .body{
+    position: absolute;
+    background-color: #222;
+    height: 100px;
+    width: 4px;
+    top: 103px;
+    left: 127px;
+}
+
+.the-draw .the-man .legs{
+    position: absolute;
+    background-color: #222;
+    height: 40px;
+    width: 4px;
+    top: 195px;
+    left: 113px;
+    transform: rotate(47deg);
+}
+
+.the-draw .the-man .legs::before{
+    content: "";
+    position: absolute;
+    background-color: #222;
+    height: 39px;
+    width: 4px;
+    top: -21px;
+    left: 20px;
+    transform: rotate(87deg);
+}
+.the-draw .the-man .hands{
+    position: absolute;
+    background-color: #222;
+    height: 40px;
+    width: 4px;
+    top: 140px;
+    left: 113px;
+    transform: rotate(-42deg);
+}
+
+.the-draw .the-man .hands::after{
+    content: "";
+    position: absolute;
+    background-color: #222;
+    height: 39px;
+    width: 4px;
+    top: -21px;
+    left: 20px;
+    transform: rotate(-42deg);
+} */
+
+/* لعبو الزيرو */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* * {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: rgba(1, 25, 87, 0.333);
+    color: #fff;
+    font-family: system-ui;
+}
+
+.cruds {
+    width: 80%;
+    margin: auto;
+}
+
+.head {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10px auto;
+}
+
+input {
+    width: 80%;
+    height: 30px;
+    padding: 4px;
+    margin: 9px;
+    background: #d908cf49;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
+
+input:focus {
+    outline: none;
+    background: #3bae8a4e;
+    transform: scale(1.1);
+}
+
+.price input {
+    width: 20%;
+}
+
+#total {
+    background: #930202;
+    padding: 4px 2px;
+    border-radius: 5%;
+}
+
+#total::before {
+    content: "Total:";
+}
+
+button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background: #470053;
+    border-radius: 20px;
+}
+
+button:hover {
+    background: #51025f;
+    letter-spacing: 1px;
+}
+
+.search .btn-search {
+    display: flex;
+    justify-content: space-around;
+}
+
+table {
+    text-align: center;
+    width: 100%;
+    margin: 10px auto;
+}
+.btn-search {
+    width: 50%;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.inputs button{
+width: 70%;
+}  */
